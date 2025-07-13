@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily News Typing Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Daily News Typing Test</h1>
+            <p class="subtitle">Practice typing with current news articles</p>
+        </header>
+
+        <!-- Top Status Bar -->
+        <div class="status-bar">
+            <div class="status-stats">
+                <div class="status-stat">
+                    <span class="status-value" id="wpm-value">0</span>
+                    <span class="status-label">WPM</span>
+                </div>
+                <div class="status-stat">
+                    <span class="status-value" id="accuracy-value">100%</span>
+                    <span class="status-label">Accuracy</span>
+                </div>
+                <div class="status-stat">
+                    <span class="status-value" id="time-value">0:00</span>
+                    <span class="status-label">Time</span>
+                </div>
+                <div class="status-stat">
+                    <span class="status-value" id="errors-value">0</span>
+                    <span class="status-label">Errors</span>
+                </div>
+            </div>
+            <div class="status-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category and Length Selection -->
+        <div class="selection-controls">
+            <div class="category-selector">
+                <label for="category-select" class="form-label">News Category:</label>
+                <div class="category-buttons">
+                    <button class="btn btn--secondary category-btn active" data-category="business">Business</button>
+                    <button class="btn btn--secondary category-btn" data-category="technology">Technology</button>
+                    <button class="btn btn--secondary category-btn" data-category="sports">Sports</button>
+                    <button class="btn btn--secondary category-btn" data-category="health">Health</button>
+                    <button class="btn btn--secondary category-btn" data-category="science">Science</button>
+                    <button class="btn btn--secondary category-btn" data-category="entertainment">Entertainment</button>
+                </div>
+            </div>
+
+            <div class="length-selector">
+                <label for="length-select" class="form-label">Article Length:</label>
+                <select id="length-select" class="form-control">
+                    <option value="short">Short (100-300 words)</option>
+                    <option value="medium" selected>Medium (300-600 words)</option>
+                    <option value="long">Long (600+ words)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Article Information -->
+        <div class="article-info-section" id="article-info">
+            <div class="article-meta">
+                <h3 class="article-title" id="article-title">Loading article...</h3>
+                <div class="article-details">
+                    <span class="article-source" id="article-source">Source</span>
+                    <span class="article-date" id="article-date">Date</span>
+                    <span class="status status--info" id="article-category">Business</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unified Typing Interface -->
+        <div class="typing-interface">
+            <div class="card">
+                <div class="card__header">
+                    <h3>Start typing to begin the test</h3>
+                    <div class="typing-controls">
+                        <button class="btn btn--primary" id="reset-btn">Reset Test</button>
+                        <button class="btn btn--secondary" id="new-article-btn">New Article</button>
+                    </div>
+                </div>
+                <div class="card__body">
+                    <div class="typing-area" id="typing-area">
+                        <div class="article-text" id="article-display">
+                            <div class="loading">Loading news article...</div>
+                        </div>
+                        <div class="typing-input-overlay">
+                            <textarea 
+                                class="typing-input" 
+                                id="typing-input" 
+                                placeholder="Click here and start typing..."
+                                rows="12"
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div class="results-modal" id="results-modal">
+            <div class="modal-content">
+                <h2>Test Complete!</h2>
+                <div class="final-stats">
+                    <div class="final-stat">
+                        <span class="final-stat-label">Final WPM:</span>
+                        <span class="final-stat-value" id="final-wpm">0</span>
+                    </div>
+                    <div class="final-stat">
+                        <span class="final-stat-label">Accuracy:</span>
+                        <span class="final-stat-value" id="final-accuracy">100%</span>
+                    </div>
+                    <div class="final-stat">
+                        <span class="final-stat-label">Time:</span>
+                        <span class="final-stat-value" id="final-time">0:00</span>
+                    </div>
+                    <div class="final-stat">
+                        <span class="final-stat-label">Total Errors:</span>
+                        <span class="final-stat-value" id="final-errors">0</span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn--primary" id="try-again-btn">Try Again</button>
+                    <button class="btn btn--secondary" id="new-category-btn">New Category</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
