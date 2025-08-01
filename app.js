@@ -1,6 +1,10 @@
 // Enhanced Daily News Typing Test Application - Fixed Version
 
 // Application state
+<script
+  src="https://js.sentry-cdn.com/23b5393c57eb51746d694368c518d722.min.js"
+  crossorigin="anonymous"
+></script>
 const state = {
   currentCategory: 'business',
   currentArticle: '',
@@ -382,7 +386,7 @@ function calculateStats() {
   const elapsed = (Date.now() - state.startTime) / 1000 / 60; // minutes
   let correctChars = 0;
   let errors = 0;
-
+ 
   // Count correct characters and errors
   for (let i = 0; i < state.typedText.length; i++) {
     if (i < state.currentArticle.length && state.typedText[i] === state.currentArticle[i]) {
