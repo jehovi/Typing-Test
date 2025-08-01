@@ -6,9 +6,6 @@
   crossorigin="anonymous"
 ></script>
 
-// Intentional Error
-myUndefinedFunction();
-
 
 const state = {
   currentCategory: 'business',
@@ -127,6 +124,8 @@ let elements = {};
 
 // Initialize the application
 function init() {
+  // Intentional Error
+  myUndefinedFunction();
   // Get DOM elements
   elements = {
     categoryButtons: document.querySelectorAll('.category-btn'),
