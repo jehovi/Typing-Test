@@ -5,6 +5,11 @@
   src="https://js.sentry-cdn.com/23b5393c57eb51746d694368c518d722.min.js"
   crossorigin="anonymous"
 ></script>
+
+// Intentional Error
+myUndefinedFunction();
+
+
 const state = {
   currentCategory: 'business',
   currentArticle: '',
